@@ -27,6 +27,8 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      # Avoid re-running only the failed deploy job after an artifact was uploaded;
+      # a new workflow run creates a fresh, unambiguous github-pages artifact.
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
